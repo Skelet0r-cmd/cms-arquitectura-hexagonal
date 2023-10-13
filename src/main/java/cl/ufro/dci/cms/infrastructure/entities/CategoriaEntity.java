@@ -1,4 +1,4 @@
-package cl.ufro.dci.tasks.infrastructure.entities;
+package cl.ufro.dci.cms.infrastructure.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -9,17 +9,23 @@ import java.time.Instant;
 @Getter
 @Setter
 @Entity
-@Table(name = "grupo")
-public class Grupo {
+@Table(name = "categoria")
+public class CategoriaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IdGrupo", nullable = false)
+    @Column(name = "IdCategoria", nullable = false)
     private Integer id;
 
     @Column(name = "Nombre", nullable = false)
     private String nombre;
 
+    @Column(name = "Descripcion")
+    private String descripcion;
+
     @Column(name = "Fecha")
     private Instant fecha;
+
+    @Column(name = "CategoriaSuperior")
+    private Integer categoriaSuperior;
 
 }

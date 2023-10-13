@@ -1,4 +1,4 @@
-package cl.ufro.dci.tasks;
+package cl.ufro.dci.cms;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

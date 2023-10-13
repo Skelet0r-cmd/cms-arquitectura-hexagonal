@@ -1,4 +1,4 @@
-package cl.ufro.dci.tasks.infrastructure.entities;
+package cl.ufro.dci.cms.infrastructure.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -10,7 +10,7 @@ import java.time.Instant;
 @Setter
 @Entity
 @Table(name = "contenido")
-public class Contenido {
+public class ContenidoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "IdContenido", nullable = false)

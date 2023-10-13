@@ -1,4 +1,4 @@
-package cl.ufro.dci.tasks.infrastructure.entities;
+package cl.ufro.dci.cms.infrastructure.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -10,7 +10,7 @@ import java.time.Instant;
 @Setter
 @Entity
 @Table(name = "post")
-public class Post {
+public class PostEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "IdPost", nullable = false)
@@ -27,7 +27,7 @@ public class Post {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "IdCategoria", nullable = false)
-    private Categoria idCategoria;
+    private CategoriaEntity idCategoriaEntity;
 
     @Column(name = "ImagenDestacada")
     private String imagenDestacada;

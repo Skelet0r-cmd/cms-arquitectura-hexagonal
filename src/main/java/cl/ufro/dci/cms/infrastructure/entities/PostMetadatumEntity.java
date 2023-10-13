@@ -1,4 +1,4 @@
-package cl.ufro.dci.tasks.infrastructure.entities;
+package cl.ufro.dci.cms.infrastructure.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -9,16 +9,16 @@ import java.time.Instant;
 @Getter
 @Setter
 @Entity
-@Table(name = "usuario_metadata")
-public class UsuarioMetadatum {
+@Table(name = "post_metadata")
+public class PostMetadatumEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IdUsuarioMetadata", nullable = false)
+    @Column(name = "IdPostMetadata", nullable = false)
     private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "IdUsuario", nullable = false)
-    private Usuario idUsuario;
+    @JoinColumn(name = "IdPost", nullable = false)
+    private PostEntity idPostEntity;
 
     @Column(name = "Clave", nullable = false)
     private String clave;

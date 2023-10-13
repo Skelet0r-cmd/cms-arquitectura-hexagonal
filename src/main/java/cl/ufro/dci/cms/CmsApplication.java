@@ -1,4 +1,4 @@
-package cl.ufro.dci.tasks;
+package cl.ufro.dci.cms;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
