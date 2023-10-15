@@ -6,5 +6,5 @@ import java.util.List;
 import java.util.Optional;
 
 public interface UpdateCategoriaUseCase {
-    Optional<Categoria> updateCategoria (Integer id, Categoria updateCategoria);
+    Optional<Categoria> updateCategoria (Integer id, Categoria updatedCategoria);
 }

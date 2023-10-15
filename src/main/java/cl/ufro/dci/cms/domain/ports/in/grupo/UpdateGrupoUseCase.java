@@ -5,5 +5,5 @@ import cl.ufro.dci.cms.domain.model.Grupo;
 import java.util.Optional;
 
 public interface UpdateGrupoUseCase {
-    Optional<Grupo> updateGrupo (Integer id, Grupo updateGrupo);
+    Optional<Grupo> updateGrupo (Integer id, Grupo updatedGrupo);
 }

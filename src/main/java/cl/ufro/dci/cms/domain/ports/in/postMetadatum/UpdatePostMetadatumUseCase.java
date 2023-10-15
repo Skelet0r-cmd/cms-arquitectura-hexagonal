@@ -5,5 +5,5 @@ import cl.ufro.dci.cms.domain.model.PostMetadatum;
 import java.util.Optional;
 
 public interface UpdatePostMetadatumUseCase {
-    Optional<PostMetadatum> updatePostMetadatum (Integer id, PostMetadatum updatePostMetadatum);
+    Optional<PostMetadatum> updatePostMetadatum (Integer id, PostMetadatum updatedPostMetadatum);
 }

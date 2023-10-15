@@ -5,5 +5,5 @@ import cl.ufro.dci.cms.domain.model.Comentario;
 import java.util.Optional;
 
 public interface UpdateComentarioUseCase {
-    Optional<Comentario> updateComentario (Integer id, Comentario updateComentario);
+    Optional<Comentario> updateComentario (Integer id, Comentario updatedComentario);
 }

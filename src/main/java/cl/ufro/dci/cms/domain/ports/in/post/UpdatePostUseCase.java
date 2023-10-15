@@ -5,5 +5,5 @@ import cl.ufro.dci.cms.domain.model.Post;
 import java.util.Optional;
 
 public interface UpdatePostUseCase {
-    Optional<Post> updatePost (Integer id, Post updatePost);
+    Optional<Post> updatePost (Integer id, Post updatedPost);
 }

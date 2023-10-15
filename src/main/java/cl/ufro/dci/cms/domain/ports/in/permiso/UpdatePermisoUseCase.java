@@ -5,5 +5,5 @@ import cl.ufro.dci.cms.domain.model.Permiso;
 import java.util.Optional;
 
 public interface UpdatePermisoUseCase {
-    Optional<Permiso> updatePermiso (Integer id, Permiso updatePermiso);
+    Optional<Permiso> updatePermiso (Integer id, Permiso updatedPermiso);
 }

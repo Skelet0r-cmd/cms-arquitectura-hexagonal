@@ -5,5 +5,5 @@ import cl.ufro.dci.cms.domain.model.UsuarioMetadatum;
 import java.util.Optional;
 
 public interface UpdateUsuarioMetadatumUseCase {
-    Optional<UsuarioMetadatum> updateUsuarioMetadatum (Integer id, UsuarioMetadatum updateUsuarioMetadatum);
+    Optional<UsuarioMetadatum> updateUsuarioMetadatum (Integer id, UsuarioMetadatum updatedUsuarioMetadatum);
 }
