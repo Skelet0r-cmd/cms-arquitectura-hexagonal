@@ -7,14 +7,14 @@ public class Categoria {
     private String nombre;
     private String descripcion;
     private Instant fecha;
-    private Integer categoriaSuperior;
+    private Integer idCategoriaSuperior;
 
-    public Categoria(Integer id, String nombre, String descripcion, Instant fecha, Integer categoriaSuperior) {
+    public Categoria(Integer id, String nombre, String descripcion, Instant fecha, Integer idCategoriaSuperior) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.fecha = fecha;
-        this.categoriaSuperior = categoriaSuperior;
+        this.idCategoriaSuperior = idCategoriaSuperior;
     }
 
     public Integer getId() {
@@ -49,11 +49,11 @@ public class Categoria {
         this.fecha = fecha;
     }
 
-    public Integer getCategoriaSuperior() {
-        return categoriaSuperior;
+    public Integer getIdCategoriaSuperior() {
+        return idCategoriaSuperior;
     }
 
-    public void setCategoriaSuperior(Integer categoriaSuperior) {
-        this.categoriaSuperior = categoriaSuperior;
+    public void setIdCategoriaSuperior(Integer idCategoriaSuperior) {
+        this.idCategoriaSuperior = idCategoriaSuperior;
     }
 }
