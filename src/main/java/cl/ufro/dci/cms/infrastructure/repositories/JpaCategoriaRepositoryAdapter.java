@@ -38,7 +38,7 @@ public class JpaCategoriaRepositoryAdapter implements CategoriaRepositoryPort {
     public Optional<Categoria> update(Categoria categoria) {
         if (jpaCategoriaRepository.existsById(categoria.getId())){
             CategoriaEntity categoriaEntity = CategoriaEntity.fromDomainModel(categoria);
-            CategoriaEntity updatedCategoriaEntity =jpaCategoriaRepository.save(categoriaEntity);
+            CategoriaEntity updatedCategoriaEntity = jpaCategoriaRepository.save(categoriaEntity);
             return Optional.of(updatedCategoriaEntity.toDomainModel());
         }
         return Optional.empty();
