@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>cl.ufro.dci</groupId>
-	<artifactId>tasks</artifactId>
+	<artifactId>cms</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>tasks</name>
 	<description>Example of hexagonal architecture using Java</description>
