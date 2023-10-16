@@ -3,11 +3,12 @@ package cl.ufro.dci.cms.infrastructure.repositories;
 import cl.ufro.dci.cms.domain.model.UsuarioMetadatum;
 import cl.ufro.dci.cms.domain.ports.out.UsuarioMetadatumRepositoryPort;
 import cl.ufro.dci.cms.infrastructure.entities.UsuarioMetadatumEntity;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
+@Component
 public class JpaUsuarioMetadatumRepositoryAdapter implements UsuarioMetadatumRepositoryPort {
     private final  JpaUsuarioMetadatumRepository jpaUsuarioMetadatumRepository;
 

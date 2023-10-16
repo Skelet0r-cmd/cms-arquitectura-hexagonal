@@ -4,11 +4,12 @@ package cl.ufro.dci.cms.infrastructure.repositories;
 import cl.ufro.dci.cms.domain.model.Contenido;
 import cl.ufro.dci.cms.domain.ports.out.ContenidoRepositoryPort;
 import cl.ufro.dci.cms.infrastructure.entities.ContenidoEntity;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
+@Component
 public class JpaContenidoRepositoryAdapter implements ContenidoRepositoryPort {
     private final JpaContenidoRepository jpaContenidoRepository;
 

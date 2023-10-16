@@ -3,11 +3,12 @@ package cl.ufro.dci.cms.infrastructure.repositories;
 import cl.ufro.dci.cms.domain.model.Comentario;
 import cl.ufro.dci.cms.domain.ports.out.ComentarioRepositoryPort;
 import cl.ufro.dci.cms.infrastructure.entities.ComentarioEntity;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
+@Component
 public class JpaComentarioRepositoryAdapter implements ComentarioRepositoryPort {
     private final JpaComentarioRepository jpaComentarioRepository;
 

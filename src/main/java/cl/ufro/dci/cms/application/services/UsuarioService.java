@@ -3,26 +3,24 @@ package cl.ufro.dci.cms.application.services;
 import cl.ufro.dci.cms.domain.model.AdditionalUsuarioInfo;
 import cl.ufro.dci.cms.domain.model.Usuario;
 import cl.ufro.dci.cms.domain.ports.in.usuario.*;
-import cl.ufro.dci.cms.domain.ports.out.ExternalServicePort;
-import org.hibernate.sql.Update;
 
 import java.util.List;
 import java.util.Optional;
 
 public class UsuarioService implements CreateUsuarioUseCase, DeleteUsuarioUseCase,
-        GetAdditionalUsuarioInfoUseCase, RetrieveUsuarioUseCase, UpdateUsuarioUseCase {
+        cl.ufro.dci.cms.domain.ports.in.usuario.GetAdditionalUsuarioInfoUseCase, RetrieveUsuarioUseCase, UpdateUsuarioUseCase {
     private final CreateUsuarioUseCase createUsuarioUseCase;
     private final DeleteUsuarioUseCase deleteUsuarioUseCase;
-    private final ExternalServicePort externalServicePort;
+    private final GetAdditionalUsuarioInfoUseCase getAdditionalUsuarioInfoUseCase;
     private final RetrieveUsuarioUseCase retrieveUsuarioUseCase;
     private final UpdateUsuarioUseCase updateUsuarioUseCase;
 
     public UsuarioService(CreateUsuarioUseCase createUsuarioUseCase, DeleteUsuarioUseCase deleteUsuarioUseCase,
-                          ExternalServicePort externalServicePort, RetrieveUsuarioUseCase retrieveUsuarioUseCase,
+                          GetAdditionalUsuarioInfoUseCase getAdditionalUsuarioInfoUseCase, RetrieveUsuarioUseCase retrieveUsuarioUseCase,
                           UpdateUsuarioUseCase updateUsuarioUseCase) {
         this.createUsuarioUseCase = createUsuarioUseCase;
         this.deleteUsuarioUseCase = deleteUsuarioUseCase;
-        this.externalServicePort = externalServicePort;
+        this.getAdditionalUsuarioInfoUseCase = getAdditionalUsuarioInfoUseCase;
         this.retrieveUsuarioUseCase = retrieveUsuarioUseCase;
         this.updateUsuarioUseCase = updateUsuarioUseCase;
     }
@@ -39,7 +37,7 @@ public class UsuarioService implements CreateUsuarioUseCase, DeleteUsuarioUseCas
 
     @Override
     public AdditionalUsuarioInfo getAdditionalUsuarioInfo(Integer usuarioId) {
-        return externalServicePort.getAdditionalUsuarioInfo(usuarioId);
+        return getAdditionalUsuarioInfoUseCase.getAdditionalUsuarioInfo(usuarioId);
     }
 
     @Override

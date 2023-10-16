@@ -3,11 +3,13 @@ package cl.ufro.dci.cms.infrastructure.repositories;
 import cl.ufro.dci.cms.domain.model.Categoria;
 import cl.ufro.dci.cms.domain.ports.out.CategoriaRepositoryPort;
 import cl.ufro.dci.cms.infrastructure.entities.CategoriaEntity;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Component
 public class JpaCategoriaRepositoryAdapter implements CategoriaRepositoryPort {
     private final JpaCategoriaRepository jpaCategoriaRepository;
 

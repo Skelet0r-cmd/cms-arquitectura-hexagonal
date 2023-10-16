@@ -3,11 +3,12 @@ package cl.ufro.dci.cms.infrastructure.repositories;
 import cl.ufro.dci.cms.domain.model.Grupo;
 import cl.ufro.dci.cms.domain.ports.out.GrupoRepositoryPort;
 import cl.ufro.dci.cms.infrastructure.entities.GrupoEntity;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
+@Component
 public class JpaGrupoRepositoryAdapter implements GrupoRepositoryPort {
     private final JpaGrupoRepository jpaGrupoRepository;
 

@@ -9,19 +9,19 @@ import java.util.List;
 import java.util.Optional;
 
 public class PostService implements CreatePostUseCase, DeletePostUseCase,
-        GetAdditionalPostInfoUseCase, RetrievePostUseCase, UpdatePostUseCase {
+        cl.ufro.dci.cms.domain.ports.in.post.GetAdditionalPostInfoUseCase, RetrievePostUseCase, UpdatePostUseCase {
     private final CreatePostUseCase createPostUseCase;
     private final DeletePostUseCase deletePostUseCase;
-    private final ExternalServicePort externalServicePort;
+    private final GetAdditionalPostInfoUseCase getAdditionalPostInfoUseCase;
     private final RetrievePostUseCase retrievePostUseCase;
     private final UpdatePostUseCase updatePostUseCase;
 
     public PostService(CreatePostUseCase createPostUseCase, DeletePostUseCase deletePostUseCase,
-                       ExternalServicePort externalServicePort, RetrievePostUseCase retrievePostUseCase,
+                       GetAdditionalPostInfoUseCase getAdditionalPostInfoUseCase, RetrievePostUseCase retrievePostUseCase,
                        UpdatePostUseCase updatePostUseCase) {
         this.createPostUseCase = createPostUseCase;
         this.deletePostUseCase = deletePostUseCase;
-        this.externalServicePort = externalServicePort;
+        this.getAdditionalPostInfoUseCase = getAdditionalPostInfoUseCase;
         this.retrievePostUseCase = retrievePostUseCase;
         this.updatePostUseCase = updatePostUseCase;
     }
@@ -38,7 +38,7 @@ public class PostService implements CreatePostUseCase, DeletePostUseCase,
 
     @Override
     public AdditionalPostInfo getAdditionalPostInfo(Integer postId) {
-        return externalServicePort.getAdditionalPostInfo(postId);
+        return getAdditionalPostInfoUseCase.getAdditionalPostInfo(postId);
     }
 
     @Override
