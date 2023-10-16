@@ -3,13 +3,12 @@ package cl.ufro.dci.cms.application.services;
 import cl.ufro.dci.cms.domain.model.AdditionalPostInfo;
 import cl.ufro.dci.cms.domain.model.Post;
 import cl.ufro.dci.cms.domain.ports.in.post.*;
-import cl.ufro.dci.cms.domain.ports.out.ExternalServicePort;
 
 import java.util.List;
 import java.util.Optional;
 
 public class PostService implements CreatePostUseCase, DeletePostUseCase,
-        cl.ufro.dci.cms.domain.ports.in.post.GetAdditionalPostInfoUseCase, RetrievePostUseCase, UpdatePostUseCase {
+        GetAdditionalPostInfoUseCase, RetrievePostUseCase, UpdatePostUseCase {
     private final CreatePostUseCase createPostUseCase;
     private final DeletePostUseCase deletePostUseCase;
     private final GetAdditionalPostInfoUseCase getAdditionalPostInfoUseCase;

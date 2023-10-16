@@ -13,6 +13,10 @@ import java.util.List;
 public class PostMetadatumController {
     private final PostMetadatumService postMetadatumService;
 
+    public PostMetadatumController() {
+        this(null);
+    }
+
     public PostMetadatumController(PostMetadatumService postMetadatumService) {
         this.postMetadatumService = postMetadatumService;
     }
