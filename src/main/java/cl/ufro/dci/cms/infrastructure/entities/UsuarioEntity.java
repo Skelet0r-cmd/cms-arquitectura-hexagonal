@@ -1,5 +1,7 @@
 package cl.ufro.dci.cms.infrastructure.entities;
 
+import cl.ufro.dci.cms.domain.model.PostMetadatum;
+import cl.ufro.dci.cms.domain.model.Usuario;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -35,4 +37,29 @@ public class UsuarioEntity {
     @JoinColumn(name = "IdGrupo", nullable = false)
     private GrupoEntity idGrupoEntity;
 
+    public UsuarioEntity() {
+    }
+
+    public UsuarioEntity(Integer id, String nombre, String apellido, Instant fecha, String contrasena, String correo, GrupoEntity idGrupoEntity) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fecha = fecha;
+        this.contrasena = contrasena;
+        this.correo = correo;
+        this.idGrupoEntity = idGrupoEntity;
+    }
+    public static UsuarioEntity fromDomainModel(Usuario usuario) {
+        return new UsuarioEntity(usuario.getId(),
+                usuario.getNombre(),
+                usuario.getApellido(),
+                usuario.getFecha(),
+                usuario.getContrasena(),
+                usuario.getCorreo(),
+                usuario.getIdGrupoEntity());
+    }
+
+    public Usuario toDomainModel() {
+        return new Usuario(id,nombre,apellido,fecha,contrasena,correo,idGrupoEntity);
+    }
 }

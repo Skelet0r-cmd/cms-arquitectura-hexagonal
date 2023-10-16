@@ -1,5 +1,6 @@
 package cl.ufro.dci.cms.infrastructure.entities;
 
+import cl.ufro.dci.cms.domain.model.Contenido;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,4 +26,23 @@ public class ContenidoEntity {
     @Column(name = "Fecha")
     private Instant fecha;
 
+    public ContenidoEntity() {
+    }
+
+    public ContenidoEntity(Integer id, String tipo, String contenido, Instant fecha) {
+        this.id = id;
+        this.tipo = tipo;
+        this.contenido = contenido;
+        this.fecha = fecha;
+    }
+    public static ContenidoEntity fromDomainModel(Contenido contenido) {
+        return new ContenidoEntity(contenido.getId(),
+                contenido.getTipo(),
+                contenido.getContenido(),
+                contenido.getFecha());
+    }
+
+    public Contenido toDomainModel() {
+        return new Contenido(id,tipo,contenido,fecha);
+    }
 }

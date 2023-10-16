@@ -1,5 +1,7 @@
 package cl.ufro.dci.cms.infrastructure.entities;
 
+import cl.ufro.dci.cms.domain.model.Permiso;
+import cl.ufro.dci.cms.domain.model.Post;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -38,4 +40,32 @@ public class PostEntity {
     @Column(name = "Fecha")
     private Instant fecha;
 
+    public PostEntity() {
+    }
+
+    public PostEntity(Integer id, String titulo, String slug, String extracto, CategoriaEntity idCategoriaEntity,
+                      String imagenDestacada, String tipo, Instant fecha) {
+        this.id = id;
+        this.titulo = titulo;
+        this.slug = slug;
+        this.extracto = extracto;
+        this.idCategoriaEntity = idCategoriaEntity;
+        this.imagenDestacada = imagenDestacada;
+        this.tipo = tipo;
+        this.fecha = fecha;
+    }
+    public static PostEntity fromDomainModel(Post post) {
+        return new PostEntity(post.getId(),
+                post.getTitulo(),
+                post.getSlug(),
+                post.getExtracto(),
+                post.getIdCategoriaEntity(),
+                post.getImagenDestacada(),
+                post.getTipo(),
+                post.getFecha());
+    }
+
+    public Post toDomainModel() {
+        return new Post(id,titulo,slug,extracto,idCategoriaEntity,imagenDestacada,tipo,fecha);
+    }
 }

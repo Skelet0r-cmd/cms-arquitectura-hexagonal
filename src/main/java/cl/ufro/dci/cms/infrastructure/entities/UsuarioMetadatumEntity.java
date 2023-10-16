@@ -1,5 +1,7 @@
 package cl.ufro.dci.cms.infrastructure.entities;
 
+import cl.ufro.dci.cms.domain.model.Usuario;
+import cl.ufro.dci.cms.domain.model.UsuarioMetadatum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,4 +34,27 @@ public class UsuarioMetadatumEntity {
     @Column(name = "Fecha")
     private Instant fecha;
 
+    public UsuarioMetadatumEntity() {
+    }
+
+    public UsuarioMetadatumEntity(Integer id, UsuarioEntity idUsuarioEntity, String clave, String valor, String tipo, Instant fecha) {
+        this.id = id;
+        this.idUsuarioEntity = idUsuarioEntity;
+        this.clave = clave;
+        this.valor = valor;
+        this.tipo = tipo;
+        this.fecha = fecha;
+    }
+    public static UsuarioMetadatumEntity fromDomainModel(UsuarioMetadatum usuarioMetadatum) {
+        return new UsuarioMetadatumEntity(usuarioMetadatum.getId(),
+                usuarioMetadatum.getIdUsuarioEntity(),
+                usuarioMetadatum.getClave(),
+                usuarioMetadatum.getValor(),
+                usuarioMetadatum.getTipo(),
+                usuarioMetadatum.getFecha());
+    }
+
+    public UsuarioMetadatum toDomainModel() {
+        return new UsuarioMetadatum(id,idUsuarioEntity,clave,valor,tipo,fecha);
+    }
 }

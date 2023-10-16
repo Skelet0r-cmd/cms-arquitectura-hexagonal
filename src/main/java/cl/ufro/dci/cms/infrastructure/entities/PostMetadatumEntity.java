@@ -1,5 +1,7 @@
 package cl.ufro.dci.cms.infrastructure.entities;
 
+import cl.ufro.dci.cms.domain.model.Post;
+import cl.ufro.dci.cms.domain.model.PostMetadatum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,4 +34,27 @@ public class PostMetadatumEntity {
     @Column(name = "Fecha")
     private Instant fecha;
 
+    public PostMetadatumEntity() {
+    }
+
+    public PostMetadatumEntity(Integer id, PostEntity idPostEntity, String clave, String valor, String tipo, Instant fecha) {
+        this.id = id;
+        this.idPostEntity = idPostEntity;
+        this.clave = clave;
+        this.valor = valor;
+        this.tipo = tipo;
+        this.fecha = fecha;
+    }
+    public static PostMetadatumEntity fromDomainModel(PostMetadatum postMetadatum) {
+        return new PostMetadatumEntity(postMetadatum.getId(),
+                postMetadatum.getIdPostEntity(),
+                postMetadatum.getClave(),
+                postMetadatum.getValor(),
+                postMetadatum.getTipo(),
+                postMetadatum.getFecha());
+    }
+
+    public PostMetadatum toDomainModel() {
+        return new PostMetadatum(id,idPostEntity,clave,valor,tipo,fecha);
+    }
 }

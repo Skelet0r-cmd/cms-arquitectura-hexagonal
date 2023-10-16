@@ -1,5 +1,6 @@
 package cl.ufro.dci.cms.infrastructure.entities;
 
+import cl.ufro.dci.cms.domain.model.Comentario;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,4 +26,22 @@ public class ComentarioEntity {
     @Column(name = "Fecha")
     private Instant fecha;
 
+    public ComentarioEntity() {
+    }
+    public ComentarioEntity(Integer id, String comentario, String respuesta, Instant fecha) {
+        this.id = id;
+        this.comentario = comentario;
+        this.respuesta = respuesta;
+        this.fecha = fecha;
+    }
+    public static ComentarioEntity fromDomainModel(Comentario comentario) {
+        return new ComentarioEntity(comentario.getId(),
+                comentario.getComentario(),
+                comentario.getRespuesta(),
+                comentario.getFecha());
+    }
+
+    public Comentario toDomainModel() {
+        return new Comentario(id,comentario,respuesta,fecha);
+    }
 }
